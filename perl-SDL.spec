@@ -9,6 +9,7 @@ Version: %{version}
 Release: %{release}
 License: LGPL
 Group: Development/Perl
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot/
 Source: http://sdlperl.org/downloads/%{real_name}-%{version}.tar.gz
 Patch0: SDL_perl-1.20.0-64bit.patch
 Patch1:	SDL_perl-1.20.0-SDL_gfx12.patch
