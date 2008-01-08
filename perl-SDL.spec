@@ -15,7 +15,7 @@ Patch0: SDL_perl-1.20.0-64bit.patch
 Patch1:	SDL_perl-1.20.0-SDL_gfx12.patch
 URL: http://www.sdlperl.org/
 BuildRequires: libungif-devel libSDL_image-devel
-BuildRequires: libSDL_mixer-devel libMesaGLU-devel perl-devel perl-PDL 
+BuildRequires: libSDL_mixer-devel mesaglu-devel perl-devel perl-PDL 
 BuildRequires: libSDL_net-devel libSDL_ttf-devel
 BuildRequires: libSDL_gfx-devel >= 2.0.8
 Provides: %{real_name} = %{version}-%{release} sdlpl = %{version}-%{release}
