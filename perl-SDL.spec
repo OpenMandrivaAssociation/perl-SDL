@@ -1,7 +1,7 @@
 %define real_name SDL_perl
 %define name perl-SDL
 %define version 1.20.0
-%define release %mkrel 17
+%define release %mkrel 18
 
 Summary: Wrapper around the cross platform Simple DirectMedia Layer game library
 Name: %{name}
