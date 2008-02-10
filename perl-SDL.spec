@@ -15,6 +15,7 @@ Source:     http://sdlperl.org/downloads/%{real_name}-%{version}.tar.gz
 Patch0:     perl-SDL-2.1.3-build.patch
 Patch1:     perl-SDL-2.1.3-gfxPie.patch
 BuildRequires: perl-devel
+BuildRequires: perl(Module::Build)
 BuildRequires: perl-PDL 
 BuildRequires: mesaglu-devel
 BuildRequires: libungif-devel
