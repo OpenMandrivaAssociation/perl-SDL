@@ -1,24 +1,29 @@
-%define real_name SDL_perl
+%define real_name SDL_Perl
 %define name perl-SDL
-%define version 1.20.0
-%define release %mkrel 18
+%define version 2.1.3
+%define release %mkrel 1
 
-Summary: Wrapper around the cross platform Simple DirectMedia Layer game library
-Name: %{name}
-Version: %{version}
-Release: %{release}
-License: LGPL
-Group: Development/Perl
-Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot/
-Source: http://sdlperl.org/downloads/%{real_name}-%{version}.tar.gz
-Patch0: SDL_perl-1.20.0-64bit.patch
-Patch1:	SDL_perl-1.20.0-SDL_gfx12.patch
-URL: http://www.sdlperl.org/
-BuildRequires: libungif-devel libSDL_image-devel
-BuildRequires: libSDL_mixer-devel mesaglu-devel perl-devel perl-PDL 
-BuildRequires: libSDL_net-devel libSDL_ttf-devel
+Name:       %{name}
+Version:    %{version}
+Release:    %{release}
+Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
+License:    LGPL
+Group:      Development/Perl
+URL:        http://www.sdlperl.org/
+Source:     http://sdlperl.org/downloads/%{real_name}-%{version}.tar.gz
+# stolen from gentoo
+Patch0:     perl-SDL-2.1.3-build.patch
+Patch1:     perl-SDL-2.1.3-gfxPie.patch
+BuildRequires: perl-devel
+BuildRequires: perl-PDL 
+BuildRequires: mesaglu-devel
+BuildRequires: libungif-devel
+BuildRequires: libSDL_image-devel
+BuildRequires: libSDL_mixer-devel
+BuildRequires: libSDL_net-devel
+BuildRequires: libSDL_ttf-devel
 BuildRequires: libSDL_gfx-devel >= 2.0.8
-Provides: %{real_name} = %{version}-%{release} sdlpl = %{version}-%{release}
+Buildroot: %{_tmppath}/%{name}-%{version}
 
 %description
 SDL Perl is a wrapper around the cross platform Simple Direct Layer game
@@ -27,20 +32,24 @@ using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 
 %prep
 %setup -q -n %{real_name}-%{version}
-%patch0 -p0
-%patch1 -p1
+%patch0 -p1
+%patch1 -p0
+# this test requires a sound device
+rm -f t/mixerpm.t
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-make OPTIMIZE="$RPM_OPT_FLAGS"
-make test
+%{__perl} Build.PL installdirs=vendor
+./Build CFLAGS="%{optflags}"
+
+%check
+./Build test
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+rm -rf %{buildroot}
+./Build install  destdir=%{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
