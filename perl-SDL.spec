@@ -1,7 +1,7 @@
 %define real_name SDL_Perl
 %define name perl-SDL
 %define version 2.1.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:       %{name}
 Version:    %{version}
@@ -10,7 +10,10 @@ Summary:    Wrapper around the cross platform Simple DirectMedia Layer game libr
 License:    LGPL
 Group:      Development/Perl
 URL:        http://www.sdlperl.org/
-Source:     http://sdlperl.org/downloads/%{real_name}-%{version}.tar.gz
+# Upstream tarball with font files copyrighted under non-free licenses
+# and the font test script which depends on them removed
+# - AdamW 2008/03 (#38257)
+Source:     http://sdlperl.org/downloads/%{real_name}-%{version}-fontclean.tar.gz
 # stolen from gentoo
 Patch0:     perl-SDL-2.1.3-build.patch
 Patch1:     perl-SDL-2.1.3-gfxPie.patch
