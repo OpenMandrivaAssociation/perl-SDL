@@ -1,34 +1,29 @@
-%define real_name SDL_Perl
-%define name perl-SDL
-%define version 2.1.3
-%define release %mkrel 4
+%define upstream_name    SDL_Perl
+%define upstream_version 2.2.0
 
-Name:       %{name}
-Version:    %{version}
-Release:    %{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
 Group:      Development/Perl
-URL:        http://www.sdlperl.org/
-# Upstream tarball with font files copyrighted under non-free licenses
-# and the font test script which depends on them removed
-# - AdamW 2008/03 (#38257)
-Source:     http://sdlperl.org/downloads/%{real_name}-%{version}-fontclean.tar.gz
-# stolen from gentoo
-Patch0:     perl-SDL-2.1.3-build.patch
-Patch1:     perl-SDL-2.1.3-gfxPie.patch
-BuildRequires: perl-devel
-BuildRequires: perl(Module::Build)
-BuildRequires: perl(YAML)
-BuildRequires: perl-PDL 
-BuildRequires: mesaglu-devel
-BuildRequires: libungif-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/~dgoehrig/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: libSDL_image-devel
 BuildRequires: libSDL_mixer-devel
 BuildRequires: libSDL_net-devel
 BuildRequires: libSDL_ttf-devel
 BuildRequires: libSDL_gfx-devel >= 2.0.8
-Buildroot: %{_tmppath}/%{name}-%{version}
+BuildRequires: libungif-devel
+BuildRequires: mesaglu-devel
+BuildRequires: perl(Module::Build)
+BuildRequires: perl-PDL 
+BuildRequires: perl(YAML)
+BuildRequires: perl-devel
+
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 SDL Perl is a wrapper around the cross platform Simple Direct Layer game
@@ -36,9 +31,7 @@ library. Essentially it allows you to write cross platform games in Perl,
 using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 
 %prep
-%setup -q -n %{real_name}-%{version}
-%patch0 -p1
-%patch1 -p0
+%setup -q -n %{upstream_name}-%{upstream_version}
 # this test requires a sound device
 rm -f t/mixerpm.t
 
@@ -62,5 +55,3 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 %{perl_vendorarch}/auto/SDL*
 %{perl_vendorarch}/SDL*
-
-
