@@ -1,7 +1,7 @@
 %define upstream_name    SDL_Perl
 %define upstream_version 2.2.0
 
-Name:       perl-%{upstream_name}
+Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
 
