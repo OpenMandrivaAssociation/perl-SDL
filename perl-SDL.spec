@@ -1,9 +1,9 @@
 %define upstream_name    SDL_Perl
-%define upstream_version 2.2.0
+%define upstream_version v2.2.1.8
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -19,7 +19,7 @@ BuildRequires: libSDL_gfx-devel >= 2.0.8
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
 BuildRequires: perl(Module::Build)
-BuildRequires: perl-PDL 
+BuildRequires: perl(PDL)
 BuildRequires: perl(YAML)
 BuildRequires: perl-devel
 
@@ -53,5 +53,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README BUGS TODO test
 %{_mandir}/*/*
-%{perl_vendorarch}/auto/SDL*
+%{perl_vendorarch}/auto/*
 %{perl_vendorarch}/SDL*
