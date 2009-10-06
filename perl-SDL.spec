@@ -3,7 +3,7 @@
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -51,7 +51,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README BUGS TODO test
+%doc README BUGS TODO 
 %{_mandir}/*/*
 %{perl_vendorarch}/auto/*
 %{perl_vendorarch}/SDL*
