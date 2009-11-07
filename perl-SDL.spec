@@ -1,9 +1,9 @@
 %define upstream_name    SDL_Perl
-%define upstream_version v2.2.2.11
+%define upstream_version v2.2.5
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -32,6 +32,7 @@ using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+chmod +w lib/SDL/Config.pm
 # this test requires a sound device
 rm -f t/mixerpm.t
 
