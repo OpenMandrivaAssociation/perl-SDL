@@ -1,5 +1,5 @@
 %define upstream_name    SDL_Perl
-%define upstream_version v2.2.5
+%define upstream_version v2.2.6
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
@@ -32,7 +32,6 @@ using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-chmod +w lib/SDL/Config.pm
 # this test requires a sound device
 rm -f t/mixerpm.t
 
