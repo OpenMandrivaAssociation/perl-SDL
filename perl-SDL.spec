@@ -1,9 +1,9 @@
-%define upstream_name    SDL_Perl
-%define upstream_version v2.2.6
+%define upstream_name    SDL
+%define upstream_version 2.403
 
-Name:       perl-SDL
+Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -40,7 +40,7 @@ rm -f t/mixerpm.t
 ./Build CFLAGS="%{optflags}"
 
 %check
-./Build test
+SDL_AUDIODRIVER=dsp ./Build test
 
 %install
 rm -rf %{buildroot}
@@ -51,7 +51,8 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README BUGS TODO 
+%doc README TODO META.yml
 %{_mandir}/*/*
-%{perl_vendorarch}/auto/*
 %{perl_vendorarch}/SDL*
+%{perl_vendorarch}/auto/*
+%{perl_vendorarch}/pods/*
