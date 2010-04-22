@@ -11,9 +11,18 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://search.cpan.org/~dgoehrig/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: libSDL_image-devel
+BuildRequires: libSDL_mixer-devel
+BuildRequires: libSDL_net-devel
+BuildRequires: libSDL_ttf-devel
+BuildRequires: libSDL_gfx-devel >= 2.0.8
+BuildRequires: libungif-devel
+BuildRequires: mesaglu-devel
 BuildRequires: perl(Alien::SDL)
+BuildRequires: perl(IO::CaptureOutput)
 BuildRequires: perl(Module::Build)
 BuildRequires: perl(PDL)
+BuildRequires: perl(Test::Most)
 BuildRequires: perl(YAML)
 BuildRequires: perl-devel
 
