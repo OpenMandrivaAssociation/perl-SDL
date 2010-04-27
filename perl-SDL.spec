@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -11,11 +11,14 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://search.cpan.org/~dgoehrig/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: libSDL-devel
+BuildRequires: libSDL_Pango-devel
+BuildRequires: libSDL_gfx-devel
 BuildRequires: libSDL_image-devel
 BuildRequires: libSDL_mixer-devel
 BuildRequires: libSDL_net-devel
+BuildRequires: libSDL_sound-devel
 BuildRequires: libSDL_ttf-devel
-BuildRequires: libSDL_gfx-devel >= 2.0.8
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
 BuildRequires: perl(Alien::SDL)
