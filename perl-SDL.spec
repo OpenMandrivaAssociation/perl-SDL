@@ -1,9 +1,10 @@
-%define upstream_name    SDL
-%define upstream_version 2.403
+%define upstream_name    SDL_Perl
+%define upstream_version v2.2.6
 
-Name:       perl-%{upstream_name}
+Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
+Epoch:      1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
 License:    LGPL
@@ -11,21 +12,15 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://search.cpan.org/~dgoehrig/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: libSDL-devel
-BuildRequires: libSDL_Pango-devel
-BuildRequires: libSDL_gfx-devel
 BuildRequires: libSDL_image-devel
 BuildRequires: libSDL_mixer-devel
 BuildRequires: libSDL_net-devel
-BuildRequires: libSDL_sound-devel
 BuildRequires: libSDL_ttf-devel
+BuildRequires: libSDL_gfx-devel >= 2.0.8
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
-BuildRequires: perl(Alien::SDL)
-BuildRequires: perl(IO::CaptureOutput)
 BuildRequires: perl(Module::Build)
 BuildRequires: perl(PDL)
-BuildRequires: perl(Test::Most)
 BuildRequires: perl(YAML)
 BuildRequires: perl-devel
 
@@ -46,7 +41,7 @@ rm -f t/mixerpm.t
 ./Build CFLAGS="%{optflags}"
 
 %check
-SDL_AUDIODRIVER=dsp ./Build test
+./Build test
 
 %install
 rm -rf %{buildroot}
@@ -57,8 +52,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README TODO META.yml
+%doc README BUGS TODO 
 %{_mandir}/*/*
-%{perl_vendorarch}/SDL*
 %{perl_vendorarch}/auto/*
-%{perl_vendorarch}/pods/*
+%{perl_vendorarch}/SDL*
