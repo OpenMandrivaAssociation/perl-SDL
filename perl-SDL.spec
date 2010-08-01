@@ -3,7 +3,7 @@
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 5
 Epoch:      1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
