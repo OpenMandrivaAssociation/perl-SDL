@@ -20,6 +20,7 @@ BuildRequires: libSDL_gfx-devel >= 2.0.8
 BuildRequires: libSDL_Pango-devel
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
+BuildRequires: perl(Alien::SDL)
 BuildRequires: perl(Module::Build)
 BuildRequires: perl(PDL)
 BuildRequires: perl(YAML)
