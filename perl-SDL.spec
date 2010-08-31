@@ -21,8 +21,11 @@ BuildRequires: libSDL_Pango-devel
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
 BuildRequires: perl(Alien::SDL)
+BuildRequires: perl(IO::CaptureOutput)
 BuildRequires: perl(Module::Build)
 BuildRequires: perl(PDL)
+BuildRequires: perl(Test::Most)
+BuildRequires: perl(Tie::Simple)
 BuildRequires: perl(YAML)
 BuildRequires: perl-devel
 
