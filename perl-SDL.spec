@@ -1,5 +1,5 @@
 %define upstream_name    SDL
-%define upstream_version 2.511
+%define upstream_version 2.512
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
@@ -57,7 +57,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README INSTALL CHANGELOG CONTRIBUTORS TODO META.yml
+%doc README INSTALL CHANGELOG TODO META.yml
 %{_mandir}/*/*
 %{perl_vendorarch}/SDL*
 %{perl_vendorarch}/auto/*
