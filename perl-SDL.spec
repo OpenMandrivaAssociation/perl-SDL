@@ -1,5 +1,5 @@
 %define upstream_name    SDL
-%define upstream_version 2.512
+%define upstream_version 2.518
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
@@ -10,7 +10,7 @@ Summary:    Wrapper around the cross platform Simple DirectMedia Layer game libr
 License:    LGPL
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://search.cpan.org/~dgoehrig/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://search.cpan.org/~kthakore/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: libSDL_image-devel
 BuildRequires: libSDL_mixer-devel
