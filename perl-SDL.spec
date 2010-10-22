@@ -3,7 +3,7 @@
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 Epoch:      1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
@@ -21,7 +21,8 @@ BuildRequires: libSDL_Pango-devel
 BuildRequires: libungif-devel
 BuildRequires: mesaglu-devel
 BuildRequires: perl(Alien::SDL)
-BuildRequires: perl(IO::CaptureOutput)
+BuildRequires: perl(Capture::Tiny)
+BuildRequires: perl(File::ShareDir)
 BuildRequires: perl(Module::Build)
 BuildRequires: perl(PDL)
 BuildRequires: perl(Test::Most)
