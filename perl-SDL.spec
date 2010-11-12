@@ -1,9 +1,9 @@
 %define upstream_name    SDL
-%define upstream_version 2.518
+%define upstream_version 2.522
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 Epoch:      1
 
 Summary:    Wrapper around the cross platform Simple DirectMedia Layer game library
