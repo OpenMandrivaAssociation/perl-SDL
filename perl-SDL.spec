@@ -1,5 +1,5 @@
 %define upstream_name    SDL
-%define upstream_version 2.524
+%define upstream_version 2.526
 
 Name:       perl-SDL
 Version:    %perl_convert_version %{upstream_version}
@@ -63,3 +63,4 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/SDL*
 %{perl_vendorarch}/auto/*
 %{perl_vendorarch}/pods/*
+%{perl_vendorarch}/Module/Build/SDL.pm
