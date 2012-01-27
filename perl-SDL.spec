@@ -12,14 +12,14 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source0:	http://search.cpan.org/~kthakore/%{module}-%{upstream_version}.tar.gz
 
-BuildRequires:	libSDL_image-devel
-BuildRequires:	libSDL_mixer-devel
-BuildRequires:	libSDL_net-devel
-BuildRequires:	libSDL_ttf-devel
-BuildRequires:	libSDL_gfx-devel >= 2.0.8
-BuildRequires:	libSDL_Pango-devel
-BuildRequires:	libungif-devel
-BuildRequires:	mesaglu-devel
+BuildRequires:	pkgconfig(SDL_image)
+BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	SDL_net-devel
+BuildRequires:	pkgconfig(SDL_ttf)
+BuildRequires:	pkgconfig(SDL_gfx) >= 2.0.8
+BuildRequires:	pkgconfig(SDL_Pango)
+BuildRequires:	ungif-devel
+BuildRequires:	pkgconfig(glu)
 BuildRequires:	perl(Alien::SDL)
 BuildRequires:	perl(Capture::Tiny)
 BuildRequires:	perl(File::ShareDir)
