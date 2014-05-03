@@ -1,2 +1,4 @@
+removed_sources:
+  SDL-2.536.tar.gz: 27c19c2f3e0d254c1c03865993fc29aa9a88d028
 sources:
-  "SDL-2.536.tar.gz": 27c19c2f3e0d254c1c03865993fc29aa9a88d028
+  SDL-2.542.tar.gz: 1eebdd122df332af37de9dfa5adf9ebca0a3f241
