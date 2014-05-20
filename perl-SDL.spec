@@ -1,7 +1,8 @@
 %define	modname	SDL
-%define modver 2.543.1
+%define modver 2.544
 
 Summary:	Wrapper around the cross platform Simple DirectMedia Layer game library
+
 
 
 Name:		perl-SDL
@@ -11,7 +12,7 @@ Release:	1
 License:	LGPLv2.1+
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://search.cpan.org/CPAN/authors/id/F/FR/FROGGS/%{modname}-2.543_1.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/F/FR/FROGGS/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	ungif-devel
 BuildRequires:	pkgconfig(glu)
@@ -64,6 +65,7 @@ rm -f t/mixerpm.t
 %{perl_vendorarch}/pods/*
 %{perl_vendorarch}/Module/Build/SDL.pm
 %{_mandir}/man3/*
+
 
 
 
