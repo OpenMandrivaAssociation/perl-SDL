@@ -44,7 +44,7 @@ library. Essentially it allows you to write cross platform games in Perl,
 using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 
 %prep
-%setup -qn SDL-2.543_1
+%setup -qn SDL-%{modver}
 # this test requires a sound device
 rm -f t/mixerpm.t
 
