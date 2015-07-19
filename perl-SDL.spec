@@ -8,7 +8,7 @@ Summary:	Wrapper around the cross platform Simple DirectMedia Layer game library
 Name:		perl-SDL
 Epoch:		1
 Version:	%perl_convert_version %{modver}
-Release:	7
+Release:	8
 License:	LGPLv2.1+
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
