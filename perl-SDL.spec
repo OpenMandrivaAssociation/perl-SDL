@@ -1,14 +1,11 @@
 %define	modname	SDL
-%define modver 2.544
+%define modver 2.548
 
 Summary:	Wrapper around the cross platform Simple DirectMedia Layer game library
-
-
-
 Name:		perl-SDL
 Epoch:		1
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	LGPLv2.1+
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -47,9 +44,12 @@ using 2d (SDL), or 3d (OpenGL), or a combination of both if you wish.
 %setup -qn SDL-%{modver}
 # this test requires a sound device
 rm -f t/mixerpm.t
+# Disable the sdlx_controller_interface.t test, it hangs on arm
+rm t/sdlx_controller_interface.t
+sed -i -e '/t\/sdlx_controller_interface\.t/d' MANIFEST
 
 %build
-%__perl Build.PL installdirs=vendor
+perl Build.PL installdirs=vendor
 ./Build CFLAGS="%{optflags}"
 
 %check
@@ -65,7 +65,3 @@ rm -f t/mixerpm.t
 %{perl_vendorarch}/pods/*
 %{perl_vendorarch}/Module/Build/SDL.pm
 %{_mandir}/man3/*
-
-
-
-
