@@ -36,6 +36,7 @@ BuildRequires:	perl(Tie::Simple)
 BuildRequires:	perl(Devel::Peek)
 BuildRequires:	perl(YAML)
 BuildRequires:	perl-devel
+BuildRequires:	fonts-ttf-dejavu
 
 %description
 SDL Perl is a wrapper around the cross platform Simple Direct Layer game
