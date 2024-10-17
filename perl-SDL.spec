@@ -9,7 +9,7 @@ Version:	%perl_convert_version %{modver}
 Release:	1
 License:	LGPLv2.1+
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://search.cpan.org/CPAN/authors/id/F/FR/FROGGS/%{modname}-%{modver}.tar.gz
 Patch1:		SDL-2.548-Adapt-to-perl-5.37.1.patch
 Patch2:		SDL-2.548-Fix-implicit-declaration-of-_calc_offset.patch
